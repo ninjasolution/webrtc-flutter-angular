@@ -1,0 +1,113 @@
+
+<body *ngIf="isLoginPage">
+    <!-- background -->
+    <div id="particles-background" class="vertical-centered-box"></div>
+    <div id="particles-foreground" class="vertical-centered-box"></div>
+    <!-- /background -->
+    <form class="login-container" [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+        <div class="up-logo-container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </div>
+        <div class="login-inputs-container">
+            <div class="login-input" id="container-0">
+                <div class="input-icon">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path></svg>
+                </div>
+                <input type="text" class="input" autocomplete="off" spellcheck="false" placeholder="username" formControlName="FullName">
+            </div>
+
+            <div class="space"></div>
+
+            <div class="login-input" id="container-0">
+                <div class="input-icon">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>
+                </div>
+                <input type="password" class="input" autocomplete="off" spellcheck="false" placeholder="password" formControlName="Password">
+            </div>
+
+            <div class="space"></div>
+
+            <div class="remember-container">
+                <div class="remember-icon">
+
+                    <svg *ngIf="!isRemember" xmlns="http://www.w3.org/2000/svg" (click)="checkRemember()" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg>
+                    <svg *ngIf="isRemember" xmlns="http://www.w3.org/2000/svg" (click)="checkRemember()" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+                <span class="remember-text" (click)="checkRemember()">
+                    Remember Me  <span (click)="togglePage()" style="color: rebeccapurple; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Register </span>
+                </span>
+            </div>
+
+        </div>
+        <button class="down-btn">
+            <div class="down-btn-container">
+                Log-in
+                <div class="down-btn-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+                </div>
+            </div>
+        </button>
+    </form>
+</body>
+
+
+
+<body *ngIf="!isLoginPage">
+    <!-- background -->
+    <div id="particles-background" class="vertical-centered-box"></div>
+    <div id="particles-foreground" class="vertical-centered-box"></div>
+    <!-- /background -->
+    <div class="register-container">
+        <div class="up-logo-container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </div>
+        <div class="login-inputs-container">
+            <div class="login-input" id="container-0">
+                <div class="input-icon">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path></svg>
+                </div>
+                <input type="text" class="input" autocomplete="off" spellcheck="false" placeholder="username">
+            </div>
+
+            <div class="space"></div>
+
+            <div class="login-input" id="container-0">
+                <div class="input-icon">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>
+                </div>
+                <input type="password" class="input" autocomplete="off" spellcheck="false" placeholder="password">
+            </div>
+
+            <div class="space"></div>
+
+            <div class="login-input" id="container-0">
+                <div class="input-icon">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>
+                </div>
+                <input type="password" class="input" autocomplete="off" spellcheck="false" placeholder="password">
+            </div>
+
+            <div class="space"></div>
+
+            <div class="remember-container">
+                <div class="remember-icon">
+
+                    <svg *ngIf="!isRemember" xmlns="http://www.w3.org/2000/svg" (click)="checkRemember()" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg>
+                    <svg *ngIf="isRemember" xmlns="http://www.w3.org/2000/svg" (click)="checkRemember()" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+                <span class="remember-text" (click)="checkRemember()">
+                    Remember Me  <span (click)="togglePage()" style="color: rebeccapurple; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Log-in </span>
+                </span>
+            </div>
+
+        </div>
+        <button class="down-btn">
+            <div class="down-btn-container register-btn">
+                Register
+                <div class="down-btn-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+                </div>
+            </div>
+        </button>
+    </div>
+</body>
